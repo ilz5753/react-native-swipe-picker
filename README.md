@@ -3,6 +3,14 @@
 `@ilz5753/react-native-swipe-picker` is a React Native library that provides an inline picker component with a swipe-to-select-an-item interaction. It is similar to the input mechanism used in apps like SHealth, where users can swipe left or right to select a value from a list of options.
 This library allows you to create a user-friendly and intuitive picker component for your React Native applications, making it easier for users to input data or make selections without the need for traditional dropdown menus or modal pickers.
 
+## Demo
+
+
+
+https://github.com/ilz5753/react-native-swipe-picker/assets/87062381/0d18bfa0-62ff-4a68-9d3a-f22dfb2aa228
+
+
+
 ## Installation
 
 ```sh
