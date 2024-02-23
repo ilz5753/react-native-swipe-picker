@@ -9,7 +9,7 @@ https://github.com/ilz5753/react-native-swipe-picker/assets/87062381/0d18bfa0-62
 
 ## Note
 
-The `@ilz5753/react-native-swipe-picker` package relies on [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#installation) and [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation) to provide smooth animations and gestures. These dependencies must be installed and properly configured in your React Native project for the timeline component to function correctly.
+The `@ilz5753/react-native-swipe-picker` package relies on [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#installation) and [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation) to provide smooth animations and gestures. These dependencies must be installed and properly configured in your React Native project for the swipe picker component to function correctly.
 
 ## Installation
 

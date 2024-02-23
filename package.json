@@ -1,6 +1,6 @@
 {
   "name": "@ilz5753/react-native-swipe-picker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Native Swipe Picker",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
