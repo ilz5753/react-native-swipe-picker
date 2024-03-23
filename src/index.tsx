@@ -1,34 +1,5 @@
-// import { NativeModules, Platform } from 'react-native';
-
-// const LINKING_ERROR =
-//   `The package 'react-native-swipe-picker' doesn't seem to be linked. Make sure: \n\n` +
-//   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-//   '- You rebuilt the app after installing the package\n' +
-//   '- You are not using Expo Go\n';
-
-// const SwipePicker = NativeModules.SwipePicker
-//   ? NativeModules.SwipePicker
-//   : new Proxy(
-//       {},
-//       {
-//         get() {
-//           throw new Error(LINKING_ERROR);
-//         },
-//       }
-//     );
-
-// export function multiply(a: number, b: number): Promise<number> {
-//   return SwipePicker.multiply(a, b);
-// }
-import React, {
-  useCallback,
-  useMemo,
-  // useState
-  // forwardRef,
-  // useImperativeHandle,
-  // type Ref,
-} from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useCallback, useMemo } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
   runOnJS,
@@ -37,19 +8,19 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-export interface ISwipePickerId {
+export interface SwipePickerId {
   id: string;
 }
 
-export interface ISwipePickerItem<T> {
+export interface SwipePickerItem<T> {
   item: T;
   index: number;
   itemHeight: number;
 }
-export interface ISwipePicker<T extends ISwipePickerId> {
+export interface SwipePickerProps<T extends SwipePickerId> {
   itemHeight: number;
   items: T[];
-  renderItem(itemData: ISwipePickerItem<T>): React.JSX.Element;
+  renderItem(itemData: SwipePickerItem<T>): React.JSX.Element;
   // visibleItems?: 3 | 5 | 7;
   /**
    * for now just supports `3` items
@@ -63,34 +34,34 @@ export interface ISwipePicker<T extends ISwipePickerId> {
 
 // interface ISwipePickerRef {}
 
-export default function SwipePicker<T extends ISwipePickerId>({
+export default function SwipePicker<T extends SwipePickerId>({
   itemHeight,
   items,
   renderItem,
-  visibleItems = 3,
+  visibleItems,
   duration = 500,
   onSelectItem,
   disabled,
-  overlayColor = 'rgba(0, 0, 0, 0.5)',
-}: ISwipePicker<T>) {
-  //   let vi = useMemo(() => {
-  //     let r = 5;
-  //     switch (visibleItems) {
-  //       case 3:
-  //       //   case 5:
-  //       case 7:
-  //         r = visibleItems;
-  //       default:
-  //         break;
-  //     }
-  //     return r;
-  //   }, [visibleItems]);
+  overlayColor = 'rgba(0, 0, 0, 0.24)',
+}: SwipePickerProps<T>) {
+  let vi = useMemo(() => {
+    let r = 3;
+    // switch (visibleItems) {
+    //   // case 3:
+    //   case 5:
+    //   case 7:
+    //     r = visibleItems;
+    //   default:
+    //     break;
+    // }
+    return r;
+  }, [visibleItems]);
   //   let [activeIndex, setActiveIndex] = useState(0);
   //   let select = useCallback(
   //     () => onSelectItem(items[activeIndex]),
   //     [onSelectItem, activeIndex, items],
   //   );
-  let vi = useMemo(() => visibleItems, [visibleItems]);
+  // let vi = useMemo(() => visibleItems ?? 3, [visibleItems]);
   let timing = useMemo(() => ({ duration }), [duration]);
   let vih = useMemo(() => Math.floor(vi / 2), [vi]);
   let length = useMemo(() => items.length, [items]);

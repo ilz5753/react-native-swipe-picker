@@ -1,4 +1,4 @@
-# @ilz5753/react-native-swipe-picker
+# react-native-swipe-picker
 
 `@ilz5753/react-native-swipe-picker` is a React Native library that provides an inline picker component with a swipe-to-select-an-item interaction. It is similar to the input mechanism used in apps like SHealth, where users can swipe left or right to select a value from a list of options.
 This library allows you to create a user-friendly and intuitive picker component for your React Native applications, making it easier for users to input data or make selections without the need for traditional dropdown menus or modal pickers.
@@ -27,7 +27,7 @@ bun add @ilz5753/react-native-swipe-picker
 import SwipePicker, {
   type ISwipePickerId,
   type ISwipePickerItem,
-} from '@ilz5753/react-native-swipe-picker';
+} from "@ilz5753/react-native-swipe-picker";
 
 //
 
@@ -40,10 +40,10 @@ interface Account extends ISwipePickerId {
 }
 
 const JennieNichols: Account = {
-  id: '0',
-  fullName: 'Jennie Nichols',
-  address: 'Valwood Pkwy',
-  uri: 'https://randomuser.me/api/portraits/women/1.jpg',
+  id: "0",
+  fullName: "Jennie Nichols",
+  address: "Valwood Pkwy",
+  uri: "https://randomuser.me/api/portraits/women/1.jpg",
 };
 
 const accounts: Account[] = [JennieNichols];
@@ -117,10 +117,6 @@ The `@ilz5753/react-native-swipe-picker` library offers several features to help
 2. **Customizable appearance:** You can customize various aspects of the picker component, such as the text color, background color, font size, and item padding. This allows you to match the component's appearance to your app's theme and branding.
 3. **Lightweight and performant:** The component is lightweight and designed to have minimal impact on the performance of your React Native applications, ensuring a smooth and responsive user experience.
 4. **Cross-platform support:** The library works well on both iOS and Android platforms, enabling you to create consistent user experiences across different devices and operating systems.
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
